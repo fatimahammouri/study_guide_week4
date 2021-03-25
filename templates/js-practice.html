@@ -36,6 +36,11 @@
 
 <script>
   "use strict";
+
+  //we query the element we want to add an Event to from the DOM
+  //here it's the button with id  "popup-alert-button"
+  //we add an event listener--> on click --> run the callBack Func
+  //callBack Function here pops up a box on the browser 
   const button = document.querySelector('#popup-alert-button');
   button.addEventListener('click', (evt)=>{ alert("Hello, you clicked a Button !!"); });
 </script>
@@ -79,7 +84,11 @@
 <script>
   "use strict";
 
-  // code here for the above problem
+  const formEvent = document.querySelector('#multiplying-form');
+  formEvent.addEventListener('submit', (evt)=>{ 
+    let maxValue = document.querySelector('input[name="up-to"]');
+
+  }); 
 
 </script>
 
