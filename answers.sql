@@ -66,3 +66,108 @@ The result set should be:
 
 
 SELECT brand_id, name FROM models WHERE year=1964;
+
+
+==========
+4
+
+-----
+
+Select the model name, brand name, and headquarters for
+the Ford Mustang from the models and brands tables. Though it's unlikely,
+remember to account for the possibility that there could be another brand
+which also offers a Mustang; that is, specifically select the *Ford* Mustang.
+
+The result set should be:
+ model_name | brand_name | headquarters
+------------+------------+--------------
+ Mustang    | Ford       | Dearborn, MI
+ (1 rows)
+
+
+-----
+
+
+SELECT models.name AS model_name, brands.name AS brand_name, headquarters FROM models JOIN brands USING (brand_id) WHERE brand_id='for' AND models.name='Mustang'; 
+
+
+==========
+5
+
+-----
+
+Select all rows for the three oldest brands from the brands
+table.
+
+The result set should be:
+ brand_id |    name    | founded |    headquarters     | discontinued
+----------+------------+---------+---------------------+--------------
+ stu      | Studebaker |    1852 | South Bend, Indiana |         1967
+ ram      | Rambler    |    1901 | Kenosha, Washington |         1969
+ cad      | Cadillac   |    1902 | New York City, NY   |
+(3 rows)
+
+
+-----
+
+
+SELECT * FROM brands ORDER BY founded LIMIT 3;
+
+
+==========
+7
+
+-----
+
+Select the brand name of any and all car brands that are not
+discontinued.
+
+The result set should be:
+   name
+-----------
+ Ford
+ Chrysler
+ Citroen
+ Chevrolet
+ Cadillac
+ BMW
+ Buick
+ Tesla
+ Subaru
+(9 rows)
+
+
+-----
+
+
+SELECT name FROM brands WHERE discontinued IS NULL;
+
+
+==========
+8
+
+-----
+
+Select everything from rows 15-24 of the models table in order by
+year. The result set should have 10 records.
+
+The result set should be:
+ model_id | year | brand_id |    name
+----------+------+----------+-------------
+       15 | 1958 | for      | Thunderbird
+       16 | 1959 | aus      | Mini
+       17 | 1959 | che      | Corvette
+       18 | 1959 | bmw      | 600
+       19 | 1960 | che      | Corvair
+       20 | 1960 | che      | Corvette
+       21 | 1960 | fai      | Rockette
+       22 | 1961 | aus      | Mini Cooper
+       23 | 1961 | stu      | Avanti
+       24 | 1961 | pon      | Tempest
+(10 rows)
+
+
+-----
+
+
+SELECT model_id, year, brand_id, name FROM models ORDER BY year OFFSET 14 LIMIT 10; 
