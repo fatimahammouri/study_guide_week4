@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Practice JavaScript</title>
   <link rel="stylesheet" href="static/styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"
+   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -83,11 +86,17 @@
 
 <script>
   "use strict";
-
+  //
   const formEvent = document.querySelector('#multiplying-form');
   formEvent.addEventListener('submit', (evt)=>{ 
-    let maxValue = document.querySelector('input[name="up-to"]');
-
+      let maxValue = document.querySelector('option[name="up-to"]');
+      let valueArray = document.querySelector('select[name="mults-of"]');
+      let results = [];
+      for (let i = 0; i <= maxValue; i++){
+        let multiple = valueArray
+    }
+      console.log()
+      
   }); 
 
 </script>
