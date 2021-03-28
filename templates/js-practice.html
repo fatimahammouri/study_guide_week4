@@ -131,6 +131,10 @@
 
 <script>
   "use strict";
+  //we jQuery the element we want to add an Event to
+  //here it's the button with Class  "find-me"
+  //we add an event listener--> on click --> run the callBack Func
+  //callBack Function here pops up a box on the browser 
   let secondButton = $(".find-me");
   secondButton.on("click", (evt)=>{
     alert("pop-Up Please button was clicked")
