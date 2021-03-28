@@ -170,7 +170,11 @@
 
 <script>
   "use strict";
-  // put your code here
+  // trying to do the {4. Slowly Making a Porcupine} part
+  // let porcupineBtn = $("#make-a-porcupine");
+  // porcupineBtn.on("click", (evt)=>{
+  //   $("cute-porcupine-image").animate({display: inline},{duration: 1000});
+  // });
 </script>
 
 <div class="hint">
@@ -201,7 +205,21 @@
 
 <script>
   "use strict";
-  // put your code here
+  //jQuery the form by id "#agreeable-form"
+  //create an event on submitting the form -->
+  //1. prevent default 
+  //2. jQuery the input value from input tag id "#favorite-food-input" 
+  //3. use .html method to change the div elemnt html 
+  let form = $("#agreeable-form");
+  form.on('submit',(evt)=>{
+
+    evt.preventDefault();
+
+    let favFood = $("#favorite-food-input").val();
+    $("#agreeable-text").html(`I like ${favFood}, too.`);
+
+  });
+
 </script>
 
 <div class="hint">
